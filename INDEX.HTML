@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Parking Management</title>
+    <link rel="stylesheet" href="STYLE.CSS">
+</head>
+<body>
+    <div class="container">
+        <h1>DIGITAL PARKING </h1>
+        <p>Select the city and location to park your vehicle:</p>
+
+        <!-- City Selection -->
+        <label for="city">Select City:</label>
+        <select id="city" onchange="updateLocations()">
+            <option value="Mumbai" >Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Hyderabad">Hyderabad</option>
+        </select>
+
+        <!-- Location Selection -->
+        <label for="location">Select Parking Location:</label>
+        <select id="location" onchange="updateSlotDisplay()"></select>
+
+        <!-- Parking Options -->
+        <button id="bike" onclick="parkVehicle('Bike', 50)">Bike (₹50)</button>
+        <button id="car" onclick="parkVehicle('Car', 200)">Car (₹200)</button>
+        <button id="bus" onclick="parkVehicle('Bus', 300)">Bus (₹300)</button>
+        <button onclick="showRecord()">Show Record</button>
+        <button onclick="deleteRecord()">Delete Record</button>
+
+        <!-- Slot Information -->
+        <div id="slots-info">
+            <p><span style='font-size:20px;'>&#128757;</span> Bike Slots: <span id="bike-slots"></span> available</p>
+            <p>🚗 Car Slots: <span id="car-slots"></span> available</p>
+            <p>🚌 Bus Slots: <span id="bus-slots"></span> available</p>
+        </div>
+
+        <div id="output"></div>
+        <div id="parking-status">🚦 Parking Status: <span id="status">Available</span></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
